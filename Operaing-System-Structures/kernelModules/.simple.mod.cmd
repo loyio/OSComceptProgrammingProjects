@@ -1,1 +1,0 @@
-cmd_/home/loyio/OSConceptProgrammingProjects/Operaing-System-Structures/kernelModules/simple.mod := { echo  /home/loyio/OSConceptProgrammingProjects/Operaing-System-Structures/kernelModules/simple.o;  echo; } > /home/loyio/OSConceptProgrammingProjects/Operaing-System-Structures/kernelModules/simple.mod
