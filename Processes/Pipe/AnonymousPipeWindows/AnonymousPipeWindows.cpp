@@ -38,8 +38,12 @@ int main(VOID)
     SetHandleInformation(WriteHandle, HANDLE_FLAG_INHERIT, 0);
 
     /* create the child process */
-    wchar_t process_name[10] = L"child.exe";
-    CreateProcess(NULL, process_name, NULL, NULL, TRUE, /* inherit handles */ 0, NULL, NULL, &si, &pi);
+    char process_name[50] = "AnonymousPipeWindowsChildProcess.exe";
+    if (!CreateProcess(NULL, process_name, NULL, NULL, TRUE, /* inherit handles */ 0, NULL, NULL, &si, &pi))
+    {
+        fprintf(stderr, "Process Creation Failed!");
+        return -1;
+    }
     
     /* close the unused end of the pipe */
     CloseHandle(ReadHandle);
