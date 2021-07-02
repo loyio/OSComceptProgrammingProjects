@@ -71,3 +71,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+
+# MacOS
+.DS_Stor
+
+.class
