@@ -195,7 +195,7 @@ void detect_pipe(char **args, size_t *args_num, char ***args2, size_t *args_num2
 			args[i] = NULL;
 			*args_num2 = *args_num - i - 1;
 			*args_num = i;
-			*args_num = args + i +1;
+			*args2 = args + i +1;
 			break;
 		}
 	}
