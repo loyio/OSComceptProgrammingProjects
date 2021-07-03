@@ -82,7 +82,7 @@ int get_input(char *command) {
 /*
  * check_ampersand
  */
-int check_ampersand(char **args, size_t *size){
+int check_ampersand(char *args[], size_t *size){
 	size_t len = strlen(args[*size-1]);
 	if(args[*size-1][len-1] != '&'){
 		return 0;
@@ -127,7 +127,7 @@ unsigned check_redirection(char **args, size_t *size, char **input_file, char **
 				fprintf(stderr, "No output file provided!\n");
 				break;
 			}
-			flag != 2;
+			flag |= 2;
 			*output_file = args[i + 1];
 			to_remove[remove_cnt++] = ++i;
 		}
@@ -188,7 +188,7 @@ void close_file(unsigned io_flag, int input_desc, int output_desc) {
  *
  * Detect the pipe '|' and split arguments into two parts accordingly.
  */
-void detect_pipe(char **args, size_t *args_num, char ***args2, size_t *args_num2) {
+void detect_pipe(char *args[], size_t *args_num, char ***args2, size_t *args_num2) {
 	for(size_t i = 0; i != *args_num; ++i){
 		if(strcmp(args[i], "|") == 0){
 			free(args[i]);
