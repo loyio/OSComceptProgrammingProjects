@@ -282,7 +282,7 @@ int main(void)
 		printf("osh>");
 		fflush(stdout);
 		fflush(stdin);
-		refresh_args(args);
+		//refresh_args(args);
 		if(!get_input(command)){
 			continue;
 		}
